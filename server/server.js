@@ -13,11 +13,12 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 io.on("connection", socket => {
-  console.log("New client connected" + socket.id);
+  console.log("New client connected");
 
   socket.on("addUser", name => {
-    // socket.username = name;
-    console.log(socket.id + "   " + socket.username);
+    socket.username = name;
+    console.log(socket.username);
+    console.log(socket.id);
   });
 
   socket.on("chat message", (msg, username) => {
@@ -25,10 +26,9 @@ io.on("connection", socket => {
     console.log(username);
     io.emit("chat message", msg, username);
   });
-
   // disconnect is fired when a client leaves the server
   socket.on("disconnect", () => {
-    console.log("user disconnected" + socket.id);
+    console.log("user disconnected");
   });
 });
 

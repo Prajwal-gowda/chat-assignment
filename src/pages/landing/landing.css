@@ -1,4 +1,4 @@
-.App {
+.landing {
   text-align: center;
 }
 
@@ -12,9 +12,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-/* 
+
 .form-field {
-  position: fixed;
+  position: relative;
   bottom: 0px;
   width: 100%;
   padding: 20px;
@@ -29,7 +29,17 @@
 }
 
 .list-message {
+  height: 80vh;
   border: 1px solid black;
   width: 90%;
-  margin: 20px auto;
-} */
+}
+
+.wrapper {
+  display: flex;
+}
+
+.list-user {
+  height: 80vh;
+  width: 10%;
+  border: 1px solid black;
+}
